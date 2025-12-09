@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html#home" class="logo">Chol DictMaker</a>
+            <div class="nav-links">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#screenshots">Shots</a>
+                <a href="manual.html">Manual</a>
+                <a href="index.html#about">About</a>
+                <a href="download.html" class="cta-button">Download</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="main-content" class="section">
+        <div class="container">
+            
+            <h2 style="color: var(--primary-color);">Chol DictMaker Application Manual</h2>
+            
+            <div style="background-color: var(--white); padding: 30px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);">
+                
+                <p>Chol DictMaker is a desktop tool designed for creating, managing, and editing multilingual dictionary projects using an <b>SQLite database</b> backend.</p>
+
+                <hr style="border-top: 1px dashed #ccc; margin: 25px 0;">
+
+                <h3 style="color: var(--secondary-color);"><i class="fas fa-file-alt"></i> 1. Project Management (File Menu)</h3>
+                <p>The <b>File</b> menu is the starting point for all dictionary work. Use shortcuts where available for speed.</p>
+                
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>New Project (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+Shift+N</span>):</b> Opens the <b>New Dictionary Project Setup</b> dialog. You must specify a <b>Database File Name</b> (e.g., `my_language.db`) and <b>Define Dictionary Fields (Columns)</b>. The `headword` field is mandatory for indexing/search, and the `meaning` field is added automatically as a repeatable field.</li>
+                    <li><b>Open Project (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+O</span>):</b> Prompts the user to select an existing SQLite database (`.db`) file. The application reads the table schema to configure the entry form.</li>
+                    <li><b>Recent Projects:</b> A submenu displaying the last 5 projects for quick access.</li>
+                    <li><b>Import Data:</b> Allows importing entries from <b>CSV</b> or <b>JSON</b> files. The import expects fixed fields (like `headword`, `pos`) and the repeatable field named `meaning`.</li>
+                    <li><b>Export Data:</b> Allows exporting all dictionary entries to <b>CSV</b> or <b>JSON</b> formats.</li>
+                    <li><b>Exit (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+Q</span>):</b> Closes the application after confirming unsaved data status.</li>
+                </ul>
+
+                <hr>
+
+                <h3 style="color: var(--secondary-color);"><i class="fas fa-edit"></i> 2. Data Entry and Editing (Entry Form Tab)</h3>
+                <p>This is the primary interface for creating and modifying dictionary entries.</p>
+                
+                <h4>Entry Form Navigation and Controls</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>New Entry:</b> Resets the form to clear all fields and prepare for a new entry.</li>
+                    <li><b>Save / Update Entry (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+S</span>):</b> Displays <b>Save New Entry</b> (performs `INSERT`) or <b>Update Entry (ID: {ID})</b> (performs `UPDATE`). <b>Validation:</b> The `Headword` field cannot be empty.</li>
+                    <li><b>Delete Entry (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+D</span>):</b> Only visible when editing an entry; permanently deletes the current entry after confirmation.</li>
+                </ul>
+
+                <h4>Field Types</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Fixed Fields (Headword, POS, Custom):</b> Rendered as single-line (`QLineEdit`) or multi-line (`QTextEdit`) input. The `pos` (part-of-speech) field includes an <b>auto-completer</b> feature based on existing terms.</li>
+                    <li><b>Repeatable Fields (e.g., Meaning):</b> Displayed in a vertical section. Use the <b>Add (+)</b> button to add new input fields (`RepeatableFieldWidget`), allowing one entry to have multiple associated meanings/examples.</li>
+                </ul>
+
+                <hr>
+
+                <h3 style="color: var(--secondary-color);"><i class="fas fa-search"></i> 3. Viewing and Searching</h3>
+
+                <h4>3.1 Headword Index Panel (Left Panel)</h4>
+                <p>Displays a paginated list of all dictionary <b>Headwords</b> in alphabetical order.</p>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Pagination:</b> Use <b>◀</b> and <b>▶</b> buttons to navigate. The current status (e.g., "Page 1/X") is displayed.</li>
+                    <li><b>Loading:</b> Clicking any item loads that entry immediately into the <b>Entry Form</b> tab for editing.</li>
+                </ul>
+
+                <h4>3.2 Search Tab (Viewer)</h4>
+                <p>Allows comprehensive searching across the database using various methods:</p>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Search Input:</b> Filters entries across all fixed fields and the `meaning` texts.</li>
+                    <li><b>Filter Input:</b> Allows filtering specifically by the `pos` field (e.g., "Noun").</li>
+                    <li><b>Alphabet Filter Buttons:</b> Dynamic buttons generated from unique first letters of headwords. Clicking <b>All</b> clears the filter.</li>
+                    <li><b>Search Results List:</b> Displays results with a formatted summary. <b>Double-clicking</b> a result loads it into the Entry Form.</li>
+                </ul>
+
+                <hr>
+
+                <h3 style="color: var(--secondary-color);"><i class="fas fa-tools"></i> 4. Settings and Tools</h3>
+                
+                <h4>4.1 Project Menu</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Project Details (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+I</span>):</b> Displays key statistics (File location, size, headword count, last edited time).</li>
+                    <li><b>Headword Duplicates / Meaning Duplicates:</b> Runs queries to find and report duplicate entries (using a normalized check).</li>
+                </ul>
+
+                <h4>4.2 View Menu</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Toggle Headword Panel (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+P</span>):</b> Shows or hides the left-side index panel.</li>
+                    <li><b>Zoom In (<span style="font-weight: bold; color: var(--accent-color);">Ctrl++</span>) / Zoom Out (<span style="font-weight: bold; color: var(--accent-color);">Ctrl+-</span>):</b> Adjusts global UI scale (50% to 200%).</li>
+                    <li><b>Change Theme:</b> Selects between available themes (e.g., Light, Dark).</li>
+                </ul>
+
+                <h4>4.3 Settings Menu</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Font Settings:</b> Opens a dialog to customize the font and size for the Headword Field and Repeatable Fields (saved per project).</li>
+                    <li><b>Change Language:</b> Allows selecting the Application's UI language. A restart is required to apply the change fully.</li>
+                </ul>
+
+                <h4>4.4 Tools Menu</h4>
+                <ul style="list-style: disc; margin-left: 20px;">
+                    <li><b>Export to PDF:</b> Opens the PDF Export dialog to save all dictionary entries to a formatted PDF document.</li>
+                    <li><b>Database Management:</b> Opens the Database Tools Dialog for <b>Backup Database</b> and <b>Restore Database</b> operations.</li>
+                </ul>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2025 Chol DictMaker. All rights reserved.</p>
+            <p>
+                <a href="terms.html">Terms of Use</a> |
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">License</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

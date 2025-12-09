@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Chol DictMaker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html#home" class="logo">Chol DictMaker</a>
+        <div class="nav-links">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#screenshots">Shots</a>
+            <a href="manual.html">Manual</a>
+            <a href="index.html#about">About</a>
+            <a href="download.html" class="cta-button">Download</a>
+        </div>
+    </nav>
+</header>
+
+<div class="download-page-container">
+    <div class="download-header">
+        <h1>Download Chol DictMaker v1.0</h1>
+        <p>Get started instantly. Thank you for supporting open-source lexical tools!</p>
+    </div>
+
+    <div class="download-card">
+        
+        <p style="font-weight: 500; text-align: center; margin-bottom: 30px;">Choose your operating system to begin the download:</p>
+
+        <div class="download-button-group">
+            <a href="/path/to/chol_dictmaker_win.zip" class="download-button">
+                <i class="fab fa-windows"></i> Windows (64-bit)
+            </a>
+            <a href="/path/to/chol_dictmaker_linux.zip" class="download-button">
+                <i class="fab fa-linux"></i> Linux (.deb/.appImage)
+            </a>
+        </div>
+
+        <div class="compatibility">
+            <i class="fas fa-info-circle"></i> Requires Python (Included in package for Windows)
+        </div>
+
+        <div class="donation-section">
+            <h2>Support Development 💖</h2>
+            <p>Chol DictMaker is free, but every donation helps fund maintenance and new features. Contribute what you feel is fair.</p>
+
+            <div id="donation-amount-display">$10</div>
+            <input type="range" min="0" max="100" value="10" step="5" id="donation-range" class="donation-slider">
+
+            <p style="font-size: 0.9em; margin-top: 5px; color: #666;">Suggested contribution range: $5 - $20</p>
+            
+            <button class="paypal-donate-btn" onclick="submitDonation()">
+                <i class="fab fa-paypal"></i> Donate and Support
+            </button>
+        </div>
+
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9em;">
+            Having trouble? <a href="https://www.paypal.com/in/cshelp/contact-us">Contact Support</a>
+        </p>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>Copyright &copy; 2025 Chol DictMaker. All rights reserved.</p>
+        <p>
+            <a href="terms.html">Terms of Use</a>
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">License</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    const slider = document.getElementById('donation-range');
+    const display = document.getElementById('donation-amount-display');
+    const donateBtn = document.querySelector('.paypal-donate-btn');
+    
+    function updateDonationDisplay() {
+        display.textContent = `$${slider.value}`;
+        if (slider.value == 0) {
+            display.textContent = 'No Donation';
+            donateBtn.disabled = true;
+            donateBtn.textContent = 'Thank You for Downloading!';
+        } else {
+            donateBtn.disabled = false;
+            donateBtn.textContent = `Donate $${slider.value} and Support`;
+        }
+    }
+
+    updateDonationDisplay();
+
+    slider.addEventListener('input', updateDonationDisplay);
+
+    function submitDonation() {
+        const amount = slider.value;
+        if (amount > 0) {
+            alert(`Thank you for your generosity! Attempting to redirect to PayPal for a $${amount} contribution.`); 
+            window.location.href = `https://paypal.me/arishv6/${amount}`; 
+        } else {
+            alert('Downloading Chol DictMaker now!');
+            window.location.href = '/path/to/chol_dictmaker_win.zip';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chol DictMaker - The Essential Dictionary Project Tool</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#home" class="logo">Chol DictMaker</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#screenshots">Shots</a>
+                <a href="manual.html" >Manual</a>
+                <a href="#about">About</a>
+                <a href="download.html" class="cta-button">Download</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <img src="icon.png" style="width: 8%;">
+            <h1>Chol DictMaker: The Essential Tool for Multilingual Dictionary Project Management.</h1>
+            <p>Stop wrestling with spreadsheets. Easily create, manage, and export large dictionary projects with powerful SQLite database tools, custom fields, and dual-panel editing.</p>
+            <a href="download.html" class="cta-button">Download Chol DictMaker (v1.0)</a>
+            <a href="#features" style="margin-left: 20px; color: var(--secondary-color); text-decoration: none; font-weight: 600;">See Features &rarr;</a>
+            
+            <figure>
+                <figcaption style="margin-top: 10px; color: #777;">A clean, focused interface for seamless data management.</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="features" class="section">
+        <div class="container">
+            <h2>Powerful Features for Dedicated Lexicographers</h2>
+            <div class="features-grid">
+                
+                <div class="feature-card">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Project Setup</h3>
+                    <p>Define your dictionary's structure from scratch, including custom fixed fields, SQL data types, and widget types (Line Edit or Text Edit).</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-columns"></i>
+                    <h3>Dual-Panel Workflow</h3>
+                    <p>Edit entries in the form while simultaneously browsing the paginated, alphabetized <b>Headword Index</b> in a dedicated side panel for superior efficiency.</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-plus-circle"></i>
+                    <h3>Repeatable Fields</h3>
+                    <p>Easily manage multiple meanings, examples, or references for a single headword using flexible, dedicated input widgets that grow with your entry.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-search"></i>
+                    <h3>Smart Search & Filter</h3>
+                    <p>Execute full-text searches across all fields (headword, meaning, pos) and utilize advanced filtering by Part of Speech (POS) with smart auto-completion.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Data Integrity Tools</h3>
+                    <p>Ensure quality control with built-in utilities to check for duplicate Headwords and Meanings, alongside simple database backup and restore functionality.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <i class="fas fa-file-export"></i>
+                    <h3>Flexible Import/Export</h3>
+                    <p>Seamlessly migrate your data. Import and export your entire dictionary data effortlessly using standard <b>CSV</b>, <b>JSON</b>, and publish-ready <b>PDF</b> formats.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="screenshots" class="section" style="background-color: var(--white);">
+        <div class="container">
+            <h2>In Action</h2>
+            <div class="screenshots-container" style="text-align: center;">
+                <figure style="display: inline-block; margin: 0 15px;">
+                    <img src="img1.png" 
+         alt="Detailed Entry Form" 
+         style="width: 100%; max-width: 350px; height: auto; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <figcaption style="margin-top: 10px; color: #777;">New Project Creation</figcaption>
+                </figure>
+                <figure style="display: inline-block; margin: 0 15px;">
+                     <img src="img2.png" 
+         alt="Detailed Entry Form" 
+         style="width: 100%; max-width: 350px; height: auto; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <figcaption style="margin-top: 10px; color: #777;">Entry Form Editing</figcaption>
+                </figure>
+                <figure style="display: inline-block; margin: 0 15px;">
+                    <img src="img3.png" 
+         alt="Detailed Entry Form" 
+         style="width: 100%; max-width: 350px; height: auto; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                    <figcaption style="margin-top: 10px; color: #777;">Search, Filter, and Alphabet Indexing</figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="section">
+        <div class="container">
+            <h2>Built for Lexical Precision</h2>
+            <div class="about-content">
+                <p>Chol DictMaker (v1.0) is a dedicated tool developed to simplify the often complex process of creating and managing multilingual dictionary data. It ensures a robust, desktop-native experience, utilizing <b>SQLite</b> for fast, localized data storage.</p>
+                <p>Developer: Arish Vijayakumar</p>
+                
+                <div class="donation-box">
+                    <h3><i class="fab fa-paypal" style="color: var(--donation-color);"></i> Support the Project</h3>
+                    <p>If Chol DictMaker proves valuable to your work, consider supporting its continued development with a small donation.</p>
+                    
+                    <form action="https://paypal.me/arishv6" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick" />
+                        <input type="hidden" name="hosted_button_id" value="YOUR_HOSTED_BUTTON_ID" />
+                        <input type="submit" value="Donate via PayPal" style="background-color: var(--donation-color); color: var(--white); padding: 10px 20px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;" />
+                    </form>
+                    <p style="margin-top: 15px; font-size: 0.9em; color: #666;">Every contribution helps fund future updates and features.</p>
+                </div>
+
+                <p style="text-align: center;">
+                    <a href="https://github.com/projectpacha/chol/" target="_blank" style="color: var(--secondary-color); font-weight: bold; text-decoration: none;">&larr; Get the Source Code on GitHub</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="hero" style="background-color: var(--secondary-color); color: var(--white); padding: 60px 0;">
+        <div class="container">
+            <h2 style="color: var(--white); margin-bottom: 10px;">Ready to Start Your Dictionary Project?</h2>
+            <p style="color: #eee; font-size: 1.2em;">Download Chol DictMaker today and take control of your lexical data.</p>
+            
+            <a href="download.html" class="cta-button" style="background-color: var(--accent-color); font-size: 1.1em; padding: 12px 25px; margin-right: 20px;">Download for Windows/Linux</a>
+            
+            <br><br>
+            <a href="manual.html" target="_blank" style="color: var(--white); text-decoration: underline;">Access the Detailed Online Manual</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright &copy; 2025 Chol DictMaker. All rights reserved.</p>
+            <p>
+                <a href="terms.html">Terms of Use</a> |
+                <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en">License</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
